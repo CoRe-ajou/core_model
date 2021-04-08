@@ -1,6 +1,6 @@
 import numpy as np
 
-'''result1 = np.load('elmo/raw_vector_train.npy')
+result1 = np.load('elmo/raw_vector_train.npy')
 result2 = np.load('elmo/raw_vector_test.npy')
 
 
@@ -34,3 +34,4 @@ result1= np.load('elmo/pad_vector_train.npy')
 result2= np.load('elmo/pad_vector_test.npy')
 
 print(result1)
+'''
