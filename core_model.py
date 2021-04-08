@@ -1,5 +1,4 @@
 import tensorflow as tf
-from get_elmo_vector import GetELMoVector
 import random
 import pandas as pd
 import numpy as np
@@ -21,6 +20,7 @@ print(train_x.shape, test_x.shape)
 
 #core_cnn_layer
 model = tf.keras.Sequential()
+model.add(tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(10,return_sequences=True), input_shape = (256,256)))
 model.add(tf.keras.layers.Conv1D(filters=250, kernel_size=3, padding='same'))
 model.add(tf.keras.layers.GlobalMaxPooling1D())
 model.add(tf.keras.layers.Dense(250, activation='relu'))
@@ -32,8 +32,10 @@ model.fit(train_x, train_y, validation_data=(test_x, test_y), epochs=10, batch_s
 #model summary
 model.summary()
 
-#model predict
-input_method = GetELMoVector()
-input_array = input_method.get_elmo_vector("ㅈㄴ 울먹이네 우리가 잘못한건줄 알겟다 ㅋㅋ")
-result = model.predict(input_array)
-print(result)
+#save model weights and architecture
+model.save_weights('data/core-model.h5')
+'''
+with open("data/core-model_architecture.json","W") as fp:
+        fp.write(model.to_json(indent="\t"))
+'''
+

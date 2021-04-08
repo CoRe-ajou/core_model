@@ -17,7 +17,7 @@ class GetELMoVector():
         array = np.zeros((1,256,256))
 
         index1 = 0
-        for i in result[0]:
+        for i in result[1]:
             array[0][index1] = i
             index1 += 1
 
