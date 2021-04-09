@@ -1,4 +1,7 @@
 import tensorflow as tf
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from get_elmo_vector import GetELMoVector
 import random
 import pandas as pd
@@ -37,7 +40,7 @@ global graph
 graph = tf.get_default_graph()
 
 model = create_model()
-model.load_weights('data/core-model.h5')
+model.load_weights('../data/core-model.h5')
 
 #model predict
 predict_model()
