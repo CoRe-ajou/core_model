@@ -1,8 +1,8 @@
 import csv
 import numpy as np
 
-test_path = "elmo/vec_test_y.csv"
-train_path = "elmo/vec_train_y.csv"
+test_path = "../elmo/vec_test_y.csv"
+train_path = "../elmo/vec_train_y.csv"
 
 f_test = open(test_path, 'r')
 r_test = csv.reader(f_test)
@@ -25,5 +25,5 @@ for line in r_train:
 result_arr1 = np.array(test_arr)
 result_arr2 = np.array(train_arr)
 
-np.save("elmo/y_test.npy", result_arr1)
-np.save("elmo/y_train.npy", result_arr2)
+np.save("../elmo/y_test.npy", result_arr1)
+np.save("../elmo/y_train.npy", result_arr2)
