@@ -11,11 +11,11 @@ elmo+cnn+bilstm model
   ```
 3. 모델 생성
   ```
-  python core_model.py
+  python core-model/core_model.py
   ```
 4. 모델 성능 측정
   ```
-  python predict_core_model.py
+  python core-model/predict_core_model.py
   ```
 -------------
 
